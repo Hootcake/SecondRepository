@@ -23,7 +23,8 @@
         <td><%= activity.duration %> Minutes</td>
         <td><%= activity.room.type %></td>
         <td><%= activity.instructor.name %></td>
-        <td><%= link_to 'Show', activity %>
+        <td><%= link_to 'Show', activity %></td>
+		<td><%= button_to 'Add to Cart', lineitems_path(activity_id: activity) %>
 		<% if secondsigned_in? %>
         <%= link_to 'Edit', edit_activity_path(activity) %>
         <%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>

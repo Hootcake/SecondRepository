@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
+    get 'search', :to=> 'activity#search'
+  resources :orders
+  get 'home/shop'
 
+
+  resources :lineitems
+  resources :carts do
+	resources :lineitems
+   end 
+   
   resources :userenrolls
   get 'home/about'
-
+  
   controller :sessions do
 	get 'login' => :newCus
 	post 'login' => :createCus
